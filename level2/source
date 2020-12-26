@@ -1,0 +1,23 @@
+void	p(void);
+{
+	void *ptr;
+	char s[76];
+
+	fflush(stdout);
+	ptr = gets(s);
+	if ((ptr & 0xb0000000) == 0xb0000000)
+	{
+		printf("(%p)\n", ptr);
+		exit(1);
+	}
+	puts(s);
+	strdup(s);
+	return;
+}
+
+
+int	main(void)
+{
+	p();
+	return;
+}
