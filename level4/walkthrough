@@ -1,0 +1,5 @@
+1. Meme principe que le precedent mais cette fois on a le printf dans une fonction differente de la condition a exploiter.
+2. En plus de ce changement la variable `m` doit etre a `0x1025544` pour passer la condition, cela peux paraitre compliquer de print 16930116 caracteres en sachant que l'on peut en entrer seuelement 512.
+3. En utilisant les precisions de printf on arrive assez rapidement au resultat souhaite.
+
+> Flag: 0f99ba5e9c446258a69b290407a6c60859e9c2d25b26575cafc9ae6d75e9456a

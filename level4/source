@@ -1,0 +1,27 @@
+void	p(char *format)
+{
+	printf(format);
+	return;
+}
+
+void	n(void)
+{
+	char	format[512];
+        char	*s;
+        float	m;
+
+        m = 0;
+        s = *format;
+        fgets(s, 512, stdin);
+	p(format);
+
+        if (m == 16930116)
+                system("/bin/cat /home/user/level5/.pass");
+        return;
+}
+
+int	main(void)
+{
+	n();
+	return;
+}
