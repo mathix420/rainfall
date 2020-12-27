@@ -1,0 +1,24 @@
+void	v()
+{
+	char	format[512];
+	char	*s;
+	float	m;
+
+	m = 0;
+	s = *format;
+	fgets(s, 512, stdin);
+	printf(format);
+
+	if (m == 64)
+	{
+		fwrite("Wait what?!\n", 1, 12, stdout);
+		system("/bin/sh");
+	}
+	return;
+}
+
+int	main(void)
+{
+	v();
+	return;
+}
