@@ -1,0 +1,24 @@
+void	n(void)
+{
+	system("/bin/cat /home/user/level7/.pass");
+	return;
+}
+
+void	m(void)
+{
+	puts("Nope");
+	return;
+}
+
+int	main(void)
+{
+	dest = malloc(64);
+	var1 = malloc(4);
+
+	edx = *m();
+	eax = *var1;
+	*eax = edx;
+	eax = *envp;
+	eax += 4;
+	// TODO:
+}
