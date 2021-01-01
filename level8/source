@@ -1,0 +1,30 @@
+int	main(void)
+{
+	char	*service;
+	char	*auth;
+	char	src[128];
+
+	printf("%p, %p \n", service, auth);
+
+	while (fgets(src, 128, stdin))
+	{
+		if (strncmp(src, "auth "))
+		{
+			auth = malloc(4);
+			if (strlen(&src + 5) > 30)
+			   continue;
+			strcpy(auth, &src + 5);
+		}
+		if (strncmp(src, "reset"))
+		   free(auth);
+		if (strncmp(src, "service"))
+		   service = strdup(&src + 7);
+		if (strncmp(src, "login"))
+		{
+			if (*(&auth + 32)))
+			   system("/bin/sh");
+			else
+			   fwrite("Password\n", 1, 10, stdout);
+		}
+	}
+}

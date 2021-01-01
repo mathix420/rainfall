@@ -1,0 +1,32 @@
+char	c[80];
+
+void	m(void)
+{
+	time_t	t;
+
+	t = time(0);
+	printf("%s - %d\n", c, t);
+	return;
+}
+
+int	main(**argv)
+{
+	void	*var1;
+	void	*var2;
+	FILE	*fp;
+
+	var1 = malloc(8);
+	*var1 = 1;
+	*(var1 + 4) = malloc(8);
+	var2 = malloc(8);
+	*var2 = 2;
+	*(var1 + 4) = malloc(8);
+
+	strcpy(var1 + 4, argv[1]);
+	strcpy(var2 + 4, argv[2]);
+
+	fp = fopen("/home/user/level8/.pass", "r");
+	fgets(c, 68, fp);
+	puts("~~~");
+	return 0;
+}
