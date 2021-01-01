@@ -1,0 +1,35 @@
+class N {
+public:
+  N(int v) { this->n = v; }
+  N operator+(N &other) { return N(this->n + other.n); }
+  N operator-(N &other) { return N(this->n - other.n); }
+  
+  void setAnnotation(char *s)
+  {
+    size_t len;
+
+    memcpy(this->s, s, strlen(s));
+    return;
+  }
+  
+private:
+  int n;
+  char s[100];
+};
+
+
+int	main(int argc, char **argv)
+{
+  N *n1;
+  N *n2;
+
+  if (argc < 2)
+    exit(1);
+
+  n1 = new N(5);
+  n2 = new N(6);
+
+  n1->setAnnotation(argv[1]);
+
+  return (***n2)();
+}
