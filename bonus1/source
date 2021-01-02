@@ -1,0 +1,12 @@
+int	main(int c, char *argv)
+{
+	int	v1;
+	char	s1[20];
+
+	v1 = atoi(argv[1]);
+	if (v1 > 9) return 1;
+	memcpy(s1, argv[2], v1 * 4);
+	if (v1 == 0x574f4c46)
+	   execl("/bin/sh", "sh", 0);
+	return 0;
+}
