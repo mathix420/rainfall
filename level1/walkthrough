@@ -1,14 +1,14 @@
-1. Desassembler l'executable
+1. Désassembler l'exécutable
    ```
    gdb level1
    set disassembly-flavor intel
    disas main
    ```
-2. Peu d'infos donc on decide de lister les functions de l'executable
+2. Peu d'infos donc on décide de lister les fonctions de l'exécutable
    ```
    info functions
    ```
-3. On remarque la function `run`
+3. On remarque la fonction `run`
    ```
    ┌ 60: sym.run ();
    │           ; var size_t size @ esp+0x4
@@ -31,7 +31,7 @@
    │           0x0804847e      c9             leave
    └           0x0804847f      c3             ret
    ```
-4. Notre but sera donc de faire un buffer overflow sur le `gets` de la fonction `main` afin d'executer la fonction `run` a l'addresse `0x08048444`
-5. On ecrit un exploit (`exploit.py`)
+4. Notre but sera donc de faire un buffer overflow sur le `gets` de la fonction `main` afin d'exécuter la fonction `run` à l'adresse `0x08048444`
+5. On écrit un exploit (`exploit.py`)
 
 > Flag: 53a4a712787f40ec66c3c26c1f4b164dcad5552b038bb0addd69bf5bf6fa8e77

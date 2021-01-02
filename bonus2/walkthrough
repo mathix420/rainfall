@@ -1,5 +1,5 @@
-1. On a un buffer overflow sur le `strcat`, on remaque que si le message le precedent est `Hello` on ne peut override que la moitier du `EIP`. En utilisant la variable `LANG` on peut donc afficher un message plus long.
-2. On decouvre que l'offset est de 23. On peut donc ecrire l'exploit.
+1. On a un buffer overflow sur le `strcat`, on remarque que si le message précédent est `Hello` on ne peut override que la moitié du `EIP`. En utilisant la variable `LANG="fi"` on peut donc afficher un message plus long.
+2. On découvre que l'offset est de 23. On peut donc écrire l'exploit.
 3. On utilise la technique du ret2libc.
    ```
    (gdb) info func system

